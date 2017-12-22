@@ -3,6 +3,7 @@
 # Created on: Sep 2016
 # Created for: ICS3U
 # This scene shows the main menu.
+# Changed colour to grey by Khoa.
 
 from scene import *
 import ui
@@ -14,7 +15,7 @@ class MainMenuScene(Scene):
         
         # add background color
         self.background = SpriteNode(position = self.size / 2, 
-                                     color = 'white', 
+                                     color = 'grey', 
                                      parent = self, 
                                      size = self.size)
     
