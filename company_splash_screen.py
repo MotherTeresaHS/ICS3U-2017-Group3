@@ -7,21 +7,33 @@
 
 from scene import *
 import ui
+import time
 
+from main_menu_scene import *
 
-class MainMenuScene(Scene):
+class CompanyScene(Scene):
     def setup(self):
         # this method is called, when user moves to this scene
         
-        # add background color
+        # create timer, so that after 2 seconds move to next scene
+        self.start_time = time.time()
+        
+        # add MT blue background color
         self.background = SpriteNode(position = self.size / 2, 
-                                     color = 'white', 
+                                     
                                      parent = self, 
                                      size = self.size)
+        self.school_crest = SpriteNode('./images/companylogo.PNG',
+                                       parent = self,
+                                       position = self.size/2,
+                                       size = self.size)
     
     def update(self):
         # this method is called, hopefully, 60 times a second
-        pass
+        
+        # after 2 seconds, move to main menu scene
+        if not self.presented_scene and time.time() - self.start_time > 2:
+            self.present_modal_scene(MainMenu())
     
     def touch_began(self, touch):
         # this method is called, when user touches the screen
@@ -49,5 +61,4 @@ class MainMenuScene(Scene):
         # this method is called, when user place app from background 
         # back into use. Reload anything you might need.
         pass
-    
     
