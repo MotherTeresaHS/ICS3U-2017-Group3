@@ -40,7 +40,7 @@ class ShopScene(Scene):
         
         background_position = Vector2(self.screen_center_x, 
                                       self.screen_center_y)
-        self.background = SpriteNode('./images/shop_backround.jpeg',
+        self.background = SpriteNode('./images/shop_backround.png',
                                      position = background_position, 
                                      parent = self, 
                                      size = self.size)
