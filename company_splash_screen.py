@@ -1,9 +1,9 @@
-# code will go here
+# 
 
-# Created by: Mr. Coxall
-# Created on: Sep 2016
+# Created by: Luca
+# Created on: jan 2018
 # Created for: ICS3U
-# This scene shows the main menu.
+# This scene shows the company spash screne.
 
 from scene import *
 import ui
