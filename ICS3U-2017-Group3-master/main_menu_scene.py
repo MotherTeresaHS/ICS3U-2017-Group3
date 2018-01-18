@@ -54,7 +54,8 @@ class MainMenu (Scene):
                                     position = self.tutorial_position,
                                     size = (530,500))
         
-        self.title_position.x = 510
+        self.title_position.x = self.size.x
+        print(self.size.x)
         self.title_position.y = self.size_of_screen_y - 100
         self.title = SpriteNode('./images/Title.png',
                                     parent = self,
