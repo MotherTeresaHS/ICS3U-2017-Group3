@@ -19,8 +19,6 @@
 # To exit the app in Pythonista, pull down with 2 fingers.
 
 # these are the links to the backround photes we found
-
-
 #https://goo.gl/images/ztLTKy
 #https://goo.gl/images/mp6MXd
 #https://goo.gl/images/asdDvg

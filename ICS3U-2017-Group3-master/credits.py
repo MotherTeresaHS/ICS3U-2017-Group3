@@ -41,26 +41,26 @@ class Credits (Scene):
                                      size = self.size)
                                      
         
-        self.credits_position.x = 550
+        self.credits_position.x = self.screen_center_x
         self.credits_position.y = self.size_of_screen_y - 100
         self.credits_label = LabelNode(text = 'Credits',
                                      font=('Helvetica', 40),
                                      parent = self,
                                      position = self.credits_position)
         
-        self.programers_position.x = 150
+        self.programers_position.x = self.screen_center_x-380
         self.programers_position.y = self.size_of_screen_y - 280
         self.progamers_label = LabelNode(text = 'Programers',
                                      font=('Helvetica', 40),
                                      parent = self,
                                      position = self.programers_position)
-        self.luca1_position.x = 120
+        self.luca1_position.x = self.screen_center_x-380
         self.luca1_position.y = self.size_of_screen_y - 340
         self.luca1_label = LabelNode(text = '-luca',
                                      font=('Helvetica', 40),
                                      parent = self,
                                      position = self.luca1_position)
-        self.khoa1_position.x = 120
+        self.khoa1_position.x = self.screen_center_x-380
         self.khoa1_position.y = self.size_of_screen_y - 420
         self.khoa1_label = LabelNode(text = '-khoa',
                                      font=('Helvetica', 40),
@@ -69,41 +69,41 @@ class Credits (Scene):
         
         
         
-        self.luca2_position.x = 780
+        self.luca2_position.x = self.screen_center_x+300 
         self.luca2_position.y = self.size_of_screen_y - 340
         self.luca2_label = LabelNode(text = '-khoa',
                                      font=('Helvetica', 40),
                                      parent = self,
                                      position = self.luca2_position)
-        self.khoa2_position.x = 780
+        self.khoa2_position.x = self.screen_center_x+300
         self.khoa2_position.y = self.size_of_screen_y - 420
         self.khoa2_label = LabelNode(text = '-luca',
                                      font=('Helvetica', 40),
                                      parent = self,
                                      position = self.khoa2_position)
         
-        self.graphic_disgners_position.x = 800
+        self.graphic_disgners_position.x = self.screen_center_x+300 
         self.graphic_disgners_position.y = self.size_of_screen_y - 280
         self.art_label = LabelNode(text = 'Graphic Disginers',
                                      font=('Helvetica', 40),
                                      parent = self,
                                      position = self.graphic_disgners_position)
         
-        self.back_position.x = 85 
+        self.back_position.x = self.screen_center_x-440  
         self.back_position.y = self.size_of_screen_y - 80
         self.back = SpriteNode('./images/left.PNG',
                                     parent = self,
                                     position = self.back_position,
                                     size = (150,150))
         
-        self.music_position.x = 500
+        self.music_position.x = self.screen_center_x
         self.music_position.y = self.size_of_screen_y - 500
         self.music_label = LabelNode(text = 'Music developer',
                                      font=('Helvetica', 40),
                                      parent = self,
                                      position = self.music_position)
         
-        self.john_patraboy_position.x = 480
+        self.john_patraboy_position.x = self.screen_center_x-20
         self.john_patraboy_position.y = self.size_of_screen_y - 560
         self.creator_label = LabelNode(text = '-John Patraboy',
                                      font=('Helvetica', 40),

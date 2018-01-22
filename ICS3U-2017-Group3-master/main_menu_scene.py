@@ -27,12 +27,12 @@ class MainMenu (Scene):
         elif config.music_is_on == False:
            config.music.pause()
 
-        self.play_position = Vector2()
-        self.tutorial_position = Vector2()
-        self.title_position = Vector2()
-        self.shop_position = Vector2()
-        self.credits_position = Vector2()
-        self.settings_position = Vector2()
+        play_position = Vector2()
+        tutorial_position = Vector2()
+        title_position = Vector2()
+        shop_position = Vector2()
+        credits_position = Vector2()
+        settings_position = Vector2()
         
         background_position = Vector2(self.screen_center_x, 
                                       self.screen_center_y)
@@ -40,45 +40,45 @@ class MainMenu (Scene):
                                      position = background_position, 
                                      parent = self, 
                                      size = self.size)
-        self.play_position.x = 370
-        self.play_position.y = self.size_of_screen_y - 550
-        self.play_button = SpriteNode('./images/StartButton.png',
+        
+        play_position.x = self.screen_center_x-140
+        play_position.y = self.screen_center_y-150
+        self.play_button = SpriteNode('./images/StartButton.PNG',
                                     parent = self,
-                                    position = self.play_position,
+                                    position = play_position,
                                     size = (600,500))
                                     
-        self.tutorial_position.x = 630
-        self.tutorial_position.y = self.size_of_screen_y - 550
-        self.tutorial_button = SpriteNode('./images/Tutorial.png',
+        tutorial_position.x = self.screen_center_x+170
+        tutorial_position.y = self.screen_center_y-150
+        self.tutorial_button = SpriteNode('./images/Tutorial.PNG',
                                     parent = self,
-                                    position = self.tutorial_position,
-                                    size = (530,500))
+                                    position = tutorial_position,
+                                    size = (600,500))
         
-        self.title_position.x = self.size.x
-        print(self.size.x)
-        self.title_position.y = self.size_of_screen_y - 100
+        title_position.x = self.screen_center_x
+        title_position.y = self.size_of_screen_y - 100
         self.title = SpriteNode('./images/Title.png',
                                     parent = self,
-                                    position = self.title_position,
+                                    position = title_position,
                                     size = self.size)
         
-        self.shop_position.x = 70
-        self.shop_position.y = self.size_of_screen_y - 230
+        shop_position.x = self.screen_center_x-440
+        shop_position.y = self.size_of_screen_y - 230
         self.shop_button = SpriteNode('./images/shop1.PNG',
                                     parent = self,
-                                    position = self.shop_position,
+                                    position = shop_position,
                                     size = (140,140))
-        self.credits_position.x = 70
-        self.credits_position.y = self.size_of_screen_y - 400
+        credits_position.x = self.screen_center_x-440
+        credits_position.y = self.size_of_screen_y - 400
         self.credits = SpriteNode('./images/credits.PNG',
                                     parent = self,
-                                    position = self.credits_position,
+                                    position = credits_position,
                                     size = (140,140))
-        self.settings_position.x = 70
-        self.settings_position.y = self.size_of_screen_y - 570
+        settings_position.x = self.screen_center_x-440
+        settings_position.y = self.size_of_screen_y - 570
         self.settings = SpriteNode('./images/settings.PNG',
                                     parent = self,
-                                    position = self.settings_position,
+                                    position = settings_position,
                                     size = (140,140))
     def update(self):
         # this method is called, hopefully, 60 times a second
@@ -120,5 +120,5 @@ class MainMenu (Scene):
     def resume(self):
         # this method is called, when user place app from background 
         # back into use. Reload anything you might need.
-        pass    
-#run(main_menu(), PORTRAIT)
+        pass
+
