@@ -34,7 +34,7 @@ class Tutorial (Scene):
         
         
         
-        self.back_position.x = 85 
+        self.back_position.x = self.screen_center_x-425  
         self.back_position.y = self.size_of_screen_y - 80
         self.back = SpriteNode('./images/left.PNG',
                                     parent = self,

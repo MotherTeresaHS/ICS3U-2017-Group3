@@ -62,7 +62,7 @@ class GameScene(Scene):
                                      size = self.size)
                                      
         #spc:PlayerShip3Blue
-        self.back_position.x = 85 
+        self.back_position.x = self.screen_center_x-440 
         self.back_position.y = self.size_of_screen_y - 80
         self.back = SpriteNode('./images/left.PNG',
                                parent = self,
@@ -78,14 +78,14 @@ class GameScene(Scene):
         #self.ship_size = (100,100)
         #self.add_child(self.ship)
         
-        self.wave_position.x = 900
+        self.wave_position.x = self.screen_center_x+420 
         self.wave_position.y = self.size_of_screen_y - 700
         self.wave_label = LabelNode(text = 'wave: 1',
                                     font=('Helvetica', 40),
                                     parent = self,
                                     position = self.wave_position)
         
-        self.score_position.x = 880
+        self.score_position.x = self.screen_center_x+420 
         self.score_position.y = self.size_of_screen_y - 50
         self.score_label = LabelNode(text = 'Score: 0',
                                      font=('Helvetica', 40),
@@ -99,7 +99,7 @@ class GameScene(Scene):
                                      parent = self,
                                      position = self.lives_position)
         '''
-        self.shild1_position.x = 220
+        self.shild1_position.x = self.screen_center_x-300 
         self.shild1_position.y = self.size_of_screen_y - 700
         self.shild1 = SpriteNode('./images/shield.PNG',
                                  parent = self,
@@ -107,7 +107,7 @@ class GameScene(Scene):
                                  size = (150,150))
         self.add_child(self.shild1)
         
-        self.shild2_position.x = 120
+        self.shild2_position.x = self.screen_center_x-380
         self.shild2_position.y = self.size_of_screen_y - 700
         self.shild2 = SpriteNode('./images/shield.PNG',
                                  parent = self,
@@ -115,7 +115,7 @@ class GameScene(Scene):
                                  size = (150,150))
         self.add_child(self.shild2)
         
-        self.shild3_position.x = 20
+        self.shild3_position.x = self.screen_center_x-460 
         self.shild3_position.y = self.size_of_screen_y - 700
         self.shild3 = SpriteNode('./images/shield.PNG',
                                  parent = self,

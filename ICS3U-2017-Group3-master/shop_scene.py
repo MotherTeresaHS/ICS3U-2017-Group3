@@ -51,7 +51,7 @@ class ShopScene(Scene):
                                     position = ship_position,
                                     scale = 0.9)                            
                                      
-        self.back_position.x = 85 
+        self.back_position.x = self.screen_center_x-440  
         self.back_position.y = self.size_of_screen_y - 80
         self.back = SpriteNode('./images/left.PNG',
                                     parent = self,
@@ -67,19 +67,19 @@ class ShopScene(Scene):
         '''
         
         
-        self.last_position.x = 250 
+        self.last_position.x = self.screen_center_x-300
         self.last_position.y = self.size_of_screen_y - 400
         self.last = SpriteNode('./images/left.PNG',
                                     parent = self,
                                     position = self.last_position,
                                     size = (150,150))
-        self.next_position.x = 800 
+        self.next_position.x = self.screen_center_x+300  
         self.next_position.y = self.size_of_screen_y - 400
         self.next = SpriteNode('./images/right.PNG',
                                     parent = self,
                                     position = self.next_position,
                                     size = (150,150))
-        self.buy_position.x = 500
+        self.buy_position.x = self.screen_center_x
         self.buy_position.y = self.size_of_screen_y - 700
         self.buy = SpriteNode('./images/buy.PNG',
                                     parent = self,

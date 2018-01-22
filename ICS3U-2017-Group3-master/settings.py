@@ -39,20 +39,20 @@ class Settings (Scene):
                                      parent = self, 
                                      size = self.size)
                                      
-        self.off_position.x = 270 
+        self.off_position.x = self.screen_center_x-250
         self.off_position.y = self.size_of_screen_y - 430
         self.off = SpriteNode('./images/soundoff.png',
                                     parent = self,
                                     position = self.off_position,
                                     size = (350,350))
-        self.on_position.x = 650 
+        self.on_position.x = self.screen_center_x+250  
         self.on_position.y = self.size_of_screen_y - 430
         self.on = SpriteNode('./images/soundon.PNG',
                                     parent = self,
                                     position = self.on_position,
                                     size = (350,350))
         
-        self.back_position.x = 85 
+        self.back_position.x = self.screen_center_x-440 
         self.back_position.y = self.size_of_screen_y - 80
         self.back = SpriteNode('./images/left.PNG',
                                     parent = self,
