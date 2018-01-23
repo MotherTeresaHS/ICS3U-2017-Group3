@@ -79,12 +79,12 @@ class ShopScene(Scene):
                                     parent = self,
                                     position = self.next_position,
                                     size = (150,150))
-        self.buy_position.x = self.screen_center_x
-        self.buy_position.y = self.size_of_screen_y - 700
-        self.buy = SpriteNode('./images/buy.PNG',
-                                    parent = self,
-                                    position = self.buy_position,
-                                    size = (600,600))
+        #self.buy_position.x = self.screen_center_x
+        #self.buy_position.y = self.size_of_screen_y - 700
+        #self.buy = SpriteNode('./images/buy.PNG',
+        #                            parent = self,
+        #                            position = self.buy_position,
+        #                            size = (600,600))
         
         
         #self.score_label.text = 'Score: ' + str(self.score)
@@ -130,10 +130,10 @@ class ShopScene(Scene):
             self.ship_purchased = True
             self.choose_ship()
         
-        if self.buy.frame.contains_point(touch.location):
-            dialogs.alert(title = "free",
-                                message = "HaHa we tricked you since we are nice its on us",
-                                hide_cancel_button = False)
+       # if self.buy.frame.contains_point(touch.location):
+       #     dialogs.alert(title = "free",
+       #                         message = "HaHa we tricked you since we are nice its on us",
+         #                       hide_cancel_button = False)
         
         if self.last.frame.contains_point(touch.location):
             self.counter = self.counter -1
