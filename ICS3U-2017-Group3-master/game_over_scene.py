@@ -34,7 +34,14 @@ class GameOverScene(Scene):
         
         
         
+        game_over_position = self.size
+        game_over_position.x = self.size_of_screen_x -500
+        game_over_position.y = game_over_position.y - 300
         
+        
+        self.game_over = SpriteNode('./images/GameOver.png',
+                                       parent = self,
+                                       position = game_over_position)
         
         
         back_button_position = self.size
