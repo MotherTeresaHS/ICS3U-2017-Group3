@@ -190,7 +190,7 @@ class GameScene(Scene):
                         shoot = False
                         self.ship.remove_from_parent()
                         self.dead = True
-                        dead = True
+                        #dead = True
                         laser.remove_from_parent()
                         
                         self.gameover = SpriteNode('./images/GameOver.png',
@@ -312,10 +312,10 @@ class GameScene(Scene):
         
     def add_alien(self):
         # add a new alien to come down
-        global dead
-        if dead == True:
-            self.alien_attack_speed = 0
-            self.alien_attack_rate = 0
+       # global dead
+        #if dead == True:
+            #self.alien_attack_speed = 0
+          #  self.alien_attack_rate = 0
             #print("hello")
         alien_start_position = Vector2()
         alien_start_position.x = random.randint(100, 
