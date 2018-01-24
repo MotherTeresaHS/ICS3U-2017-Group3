@@ -14,7 +14,7 @@ global shoot
 shoot = False
 
 global lives
-
+dead = False
 global space_ship
 #space_ship = SpriteNode ('./images/usership1.png',size = (180,180))
 
@@ -128,12 +128,15 @@ class GameScene(Scene):
         global score
         global lives
         global shoot
+        global dead
         #lasers = SpriteNode('spc:LaserBlue9', position=self.ship.position, z_position=-1, parent=self)
+        '''
         if shoot == True:
             #lasers.run_action(Action.sequence(Action.move_by(0, 1000), Action.remove()))
             self.create_new_lasers()
         else:
             shoot = False
+        '''
         # every update, randomly check if a new alien should be created
         alien_create_chance = random.randint(1, 120)
         if alien_create_chance <= self.alien_attack_rate:
@@ -184,9 +187,11 @@ class GameScene(Scene):
                     self.lives = self.lives - 1
                     # since game over, move to next scene
                     if self.lives == 0:
-                        
+                        shoot = False
                         self.ship.remove_from_parent()
                         self.dead = True
+                        dead = True
+                        laser.remove_from_parent()
                         
                         self.gameover = SpriteNode('./images/GameOver.png',
                                           parent = self,
@@ -207,6 +212,12 @@ class GameScene(Scene):
             pass
             #print(len(self.aliens))
         # this is the wave funtion 
+        if shoot == True:
+            #lasers.run_action(Action.sequence(Action.move_by(0, 1000), Action.remove()))
+            self.create_new_lasers()
+        else:
+            shoot = False
+            
         if self.score % 20 ==  0 :
             self.score = self.score + 1
             self.wave = self.wave + 1
@@ -301,7 +312,11 @@ class GameScene(Scene):
         
     def add_alien(self):
         # add a new alien to come down
-        
+        global dead
+        if dead == True:
+            self.alien_attack_speed = 0
+            self.alien_attack_rate = 0
+            #print("hello")
         alien_start_position = Vector2()
         alien_start_position.x = random.randint(100, 
                                          self.size_of_screen_x - 100)
@@ -323,4 +338,5 @@ class GameScene(Scene):
                                          self.alien_attack_speed,
                                          TIMING_SINODIAL)
         self.aliens[len(self.aliens)-1].run_action(alienMoveAction)
+        
 #run(GameScene(), PORTRAIT)
