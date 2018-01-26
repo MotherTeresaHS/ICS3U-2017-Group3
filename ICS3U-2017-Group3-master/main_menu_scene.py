@@ -10,6 +10,7 @@ from credits import *
 from tutorial import *
 import config
 import ui
+from game_over_scene import *
 
 class MainMenu (Scene):
     def setup(self):
@@ -82,7 +83,9 @@ class MainMenu (Scene):
                                     size = (140,140))
     def update(self):
         # this method is called, hopefully, 60 times a second
-        pass
+        if config.game_over == True:
+            self.present_modal_scene(GameOverScene())
+            config.game_over = False
     
     def touch_began(self, touch):
         # this method is called, when user touches the screen

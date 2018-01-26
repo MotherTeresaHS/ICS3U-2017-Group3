@@ -163,7 +163,8 @@ class GameScene(Scene):
                     if alien.frame.contains_rect(laser.frame):
                         laser.remove_from_parent()
                         self.lasers.remove(laser)
-                        
+                        if self.dead == True:
+                            self.score = self.score
                         alien.remove_from_parent()
                         #self.aliens.remove(alien)
                         self.score = self.score + 1
@@ -190,9 +191,11 @@ class GameScene(Scene):
                         shoot = False
                         self.ship.remove_from_parent()
                         self.dead = True
-                        #dead = True
+                        dead = True
                         laser.remove_from_parent()
-                        
+                        config.game_over = True
+                        self.dismiss_modal_scene()
+                        '''
                         self.gameover = SpriteNode('./images/GameOver.png',
                                           parent = self,
                                           position = Vector2(self.screen_center_x, 
@@ -206,6 +209,7 @@ class GameScene(Scene):
                                     parent = self,
                                     position = self.menu_position,
                                     scale = self.scale_size)
+                       '''
                     if self.lives == -1:
                            self.lives = 0
         else:
